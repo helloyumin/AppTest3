@@ -101,17 +101,23 @@ public class Login extends AppCompatActivity {
 
     }
 
-    private void loginResponse(JSONObject loginRes) {
+    public void loginResponse(JSONObject loginRes) {
             // get reply
-            try {
+        try {
+            loginRes.getString(id);
+            loginRes.getString(pwd);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+           /* try {
                 loginRes.get(id);
                 loginRes.get(pwd);
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
+           // 질문 : get과 getString의 차이는 무엇인가요?
             String login_data = loginRes.toString();
             Toast.makeText(getApplication(), login_data, Toast.LENGTH_LONG).show();
     }
-
 
 }

@@ -20,6 +20,9 @@ public class MoodResult1 extends AppCompatActivity {
         TextView tv_word = (TextView) findViewById(R.id.tv_word);
         Button btn_next = (Button) findViewById(R.id.btn_next);
 
+        String score = getIntent().getStringExtra("SCORE");
+        tv_score.setText("선택하신 답은 "+score+"번 입니다.");
+
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
